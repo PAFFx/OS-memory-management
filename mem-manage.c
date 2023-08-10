@@ -28,9 +28,17 @@ void heap_mem(int total_epochs){
  
 
 int main(){
+  printf("--------stack variable showcase--------\n");
   stack_mem(1,5);
+  printf("\n");
+
+  printf("--------heap variable showcase--------\n");
   heap_mem(5);
-  printf("global variable a's address: %p", &a);
-  printf("global variable b's address: %p", &b);
-  printf("global variable c's address: %p", &c);
+  printf("\n");
+
+  printf("--------global variable showcase--------\n");
+  printf("global variable a's address: %p\n", &a);
+  printf("global variable b's address: %p\n", &b);
+  printf("global variable c's address: %p\n", &c);
+  printf("\n");
 }
