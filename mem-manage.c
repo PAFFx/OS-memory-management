@@ -2,6 +2,10 @@
 #include <stdlib.h>
 
 
+int a = 10;
+int b = 10;
+int c = 10;
+
 void stack_mem(int current_epoch, int total_epochs){
   if (current_epoch == total_epochs){
     return;
@@ -21,8 +25,12 @@ void heap_mem(int total_epochs){
     free(addr[i]);
   }
 }
+ 
 
 int main(){
   stack_mem(1,5);
   heap_mem(5);
+  printf("global variable a's address: %p", &a);
+  printf("global variable b's address: %p", &b);
+  printf("global variable c's address: %p", &c);
 }
