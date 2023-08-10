@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 void stack_mem(int current_epoch, int total_epochs){
@@ -10,8 +11,18 @@ void stack_mem(int current_epoch, int total_epochs){
   stack_mem(current_epoch +1, total_epochs);
 }
 
-
+void heap_mem(int total_epochs){
+  int* addr[total_epochs];
+  for (int i=0; i<total_epochs; i++){
+    addr[i] = (int*)malloc(sizeof(int));
+    printf("epoch : %d, heap_variable's address: %p\n", i, addr[i]);
+  }
+  for (int i=0; i<total_epochs; i++){
+    free(addr[i]);
+  }
+}
 
 int main(){
   stack_mem(1,5);
+  heap_mem(5);
 }
