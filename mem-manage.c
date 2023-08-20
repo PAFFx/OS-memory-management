@@ -26,6 +26,13 @@ void heap_mem(int total_epochs){
   }
 }
  
+void stack_overflow(){
+  int A[50000][50000];
+  A[0][0] = 10;
+  if (A[0][0] == 0)
+    return;
+  stack_overflow();
+}
 
 int main(){
   printf("--------stack variable showcase--------\n");
@@ -41,4 +48,6 @@ int main(){
   printf("global variable b's address: %p\n", &b);
   printf("global variable c's address: %p\n", &c);
   printf("\n");
+
+  stack_overflow();
 }
